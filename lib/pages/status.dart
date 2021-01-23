@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -13,7 +14,12 @@ class StatusPage extends StatelessWidget {
 
     return Scaffold(
       body: Center(
-        child: Text('StatusPage'),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text('ServerStatus: ${socketService.serverStatus}')
+          ],
+        ),
       ),
     );
   }
