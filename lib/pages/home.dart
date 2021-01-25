@@ -76,9 +76,9 @@ class _HomePageState extends State<HomePage> {
     return Dismissible(
       key: Key(band.id),
       direction: DismissDirection.startToEnd,
-      onDismissed: (direction){
-        print('direccion: $direction');
-        print('id: ${band.id}');
+      onDismissed: (_){
+        //borar una banda desde el servidor
+        socketService.emit('delete-band', { 'id': band.id });
       },
       background: Container(
         padding: EdgeInsets.only(left: 8.0),
